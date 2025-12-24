@@ -1,0 +1,25 @@
+[user]
+    name = derekuang
+    email = kuangyaode@gmail.com
+[init]
+    defaultBranch = main
+[core]
+    autocrlf = true
+    protectNTFS = false
+[branch "main"]
+    mergeoptions = --no-ff
+[http]
+    proxy = http://127.0.0.1:7890
+[https]
+    proxy = http://127.0.0.1:7890
+[pull]
+    rebase = true
+[alias]
+    lg = log --graph --oneline --all --decorate
+    pf = push --force-with-lease
+[fetch]
+    prune = true
+[rebase]
+    autoStash = true
+[submodule]
+    recurse = true
