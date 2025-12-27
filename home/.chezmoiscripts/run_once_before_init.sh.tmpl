@@ -1,0 +1,6 @@
+{{ if eq .osid "linux-fedora" -}}
+#!/bin/bash
+
+yes | sudo dnf copr enable avengemedia/dms
+yes | sudo dnf copr enable wezfurlong/wezterm-nightly
+{{ end -}}

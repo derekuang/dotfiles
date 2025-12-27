@@ -1,0 +1,5 @@
+{{ if eq .osid "linux-fedora" -}}
+#!/bin/bash
+
+systemctl --user add-wants niri.service dms
+{{ end -}}
