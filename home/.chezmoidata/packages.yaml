@@ -1,4 +1,11 @@
 packages:
   fedora:
     dnf:
+      - 'dms'
+      - 'git'
+      - 'google-chrome-stable'
+      - 'mpv'
+      - 'niri'
       - 'nvim'
+      - 'wezterm'
+      - 'zsh'
