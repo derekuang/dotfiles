@@ -1,6 +1,13 @@
 {{ if eq .osid "linux-fedora" -}}
 #!/bin/bash
 
+sudo sed -e 's|^metalink=|#metalink=|g' \
+    -e 's|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora|g' \
+    -i.bak \
+    /etc/yum.repos.d/fedora.repo \
+    /etc/yum.repos.d/fedora-updates.repo
+sudo dnf makecache
+
 yes | sudo dnf copr enable avengemedia/dms
 yes | sudo dnf copr enable wezfurlong/wezterm-nightly
 {{ end -}}
