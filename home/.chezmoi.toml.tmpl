@@ -3,6 +3,8 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+[cd]
+    command = "/usr/bin/zsh"
 [data]
     osid = {{ $osid | quote }}
 [edit]
