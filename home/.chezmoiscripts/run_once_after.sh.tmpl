@@ -1,5 +1,9 @@
 {{ if eq .osid "linux-fedora" -}}
 #!/bin/bash
 
+# 设置zsh为默认shell
+chsh -s $(which zsh)
+
+# 服务管理
 systemctl --user add-wants niri.service dms
 {{ end -}}

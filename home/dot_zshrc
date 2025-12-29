@@ -102,3 +102,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# 开启代理
+proxy_on() {
+    export https_proxy=http://127.0.0.1:7890
+    export http_proxy=http://127.0.0.1:7890
+    export all_proxy=socks5://127.0.0.1:7890
+    echo "HTTP/HTTPS Proxy on"
+}
+
+# 关闭代理
+proxy_off() {
+    unset http_proxy
+    unset https_proxy
+    unset all_proxy
+    echo "HTTP/HTTPS Proxy off"
+}
