@@ -3,11 +3,13 @@ packages:
     copr:
       - 'agonie/Maple-mono-nf-cn'
       - 'avengemedia/dms'
+      - 'cboxdoerfer/fsearch'
       - 'wezfurlong/wezterm-nightly'
     dnf:
       - 'dms'
       - 'fcitx5'
       - 'fcitx5-rime'
+      - 'fsearch'
       - 'git'
       - 'google-chrome-stable'
       - 'librime-lua'
