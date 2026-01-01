@@ -6,4 +6,10 @@ chsh -s $(which zsh)
 
 # 服务管理
 systemctl --user add-wants niri.service dms
+
+# 设置fcitx5为默认输入法
+imsettings-switch fcitx5
+
+# 单独为微信设置环境变量
+sed -i 's|^Exec=.*|Exec=env GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx /usr/bin/wechat %U|' ~/.local/share/applications/wechat.desktop
 {{ end -}}

@@ -2,7 +2,7 @@
 #!/bin/bash
 
 {{ range .packages.fedora.dnf -}}
-if ! command -v {{ . }} &> /dev/null; then
+if ! rpm -q --quiet {{ . }}; then
     sudo dnf install {{ . | quote }}
 fi
 {{ end -}}
