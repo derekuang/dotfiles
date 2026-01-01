@@ -7,4 +7,4 @@ ExecStart=/usr/bin/kanata --cfg /home/kyd/kanata.kbd
 Restart=no
 
 [Install]
-WantedBy=graphical.target
+WantedBy=multi-user.target

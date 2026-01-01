@@ -6,6 +6,7 @@ chsh -s $(which zsh)
 
 # kanata系统服务
 sudo cp {{ .chezmoi.config.sourceDir -}}/system/services/kanata.service /etc/systemd/system/
+sudo systemctl daemon-reload
 sudo systemctl enable kanata.service
 sudo systemctl start kanata.service
 
