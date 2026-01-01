@@ -18,3 +18,7 @@ packages:
       - 'wezterm'
       - 'zed'
       - 'zsh'
+    rpm:
+      -
+        name: clash-verge
+        url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge-2.4.4-1.x86_64.rpm'

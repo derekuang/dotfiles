@@ -6,4 +6,12 @@ if ! rpm -q --quiet {{ . }}; then
     sudo dnf install {{ . | quote }}
 fi
 {{ end -}}
+
+{{ range .packages.fedora.rpm -}}
+if ! rpm -q --quiet {{ .name }}; then
+    curl -L -o ~/tmp/{{ .name }}.rpm {{ .url }}
+    sudo dnf install ~/tmp/{{ .name }}.rpm
+fi
+{{ end -}}
+
 {{ end -}}
