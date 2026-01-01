@@ -2,6 +2,8 @@
 #!/bin/bash
 
 {{ range .packages.fedora.dnf -}}
-sudo dnf install {{ . | quote }}
+if ! command -v {{ . }} &> /dev/null; then
+    sudo dnf install {{ . | quote }}
+fi
 {{ end -}}
 {{ end -}}

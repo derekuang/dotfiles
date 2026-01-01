@@ -1,5 +1,8 @@
 packages:
   fedora:
+    copr:
+      - 'avengemedia/dms'
+      - 'wezfurlong/wezterm-nightly'
     dnf:
       - 'dms'
       - 'git'
@@ -7,5 +10,8 @@ packages:
       - 'mpv'
       - 'niri'
       - 'nvim'
+      - 'tldr'
+      - 'tmux'
       - 'wezterm'
+      - 'zed'
       - 'zsh'

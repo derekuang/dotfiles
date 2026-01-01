@@ -1,13 +1,20 @@
 {{ if eq .osid "linux-fedora" -}}
 #!/bin/bash
 
-sudo sed -e 's|^metalink=|#metalink=|g' \
-    -e 's|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora|g' \
-    -i.bak \
-    /etc/yum.repos.d/fedora.repo \
-    /etc/yum.repos.d/fedora-updates.repo
-sudo dnf makecache
+# 代理
+# 换源
+#sudo sed -e 's|^metalink=|#metalink=|g' \
+#    -e 's|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora|g' \
+#    -i.bak \
+#    /etc/yum.repos.d/fedora.repo \
+#    /etc/yum.repos.d/fedora-updates.repo
+#sudo dnf makecache
 
-yes | sudo dnf copr enable avengemedia/dms
-yes | sudo dnf copr enable wezfurlong/wezterm-nightly
+# Terra软件源
+sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+
+# copr第三方源
+{{ range .packages.fedora.copr -}}
+sudo dnf copr enable {{ . }}
+{{ end -}}
 {{ end -}}
