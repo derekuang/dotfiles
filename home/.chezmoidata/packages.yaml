@@ -1,6 +1,7 @@
 packages:
   fedora:
     copr:
+      - 'agonie/Maple-mono-nf-cn'
       - 'avengemedia/dms'
       - 'wezfurlong/wezterm-nightly'
     dnf:
@@ -10,6 +11,7 @@ packages:
       - 'git'
       - 'google-chrome-stable'
       - 'librime-lua'
+      - 'maple-mono-nf-cn'
       - 'mpv'
       - 'neovim'
       - 'niri'
