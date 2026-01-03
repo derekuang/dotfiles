@@ -11,10 +11,19 @@
 #sudo dnf makecache
 
 # Terra软件源
-sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+if ! dnf repo list | grep terra -q; then
+    sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+fi
 
 # copr第三方源
 {{ range .packages.fedora.copr -}}
-sudo dnf copr enable {{ . }}
+    if ! dnf copr list | grep {{ . }} -q; then
+        sudo dnf copr enable {{ . }}
+    fi
 {{ end -}}
+
+# flathub仓库
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update --appstream
+
 {{ end -}}

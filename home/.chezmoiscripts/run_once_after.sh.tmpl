@@ -2,7 +2,9 @@
 #!/bin/bash
 
 # 设置zsh为默认shell
-chsh -s $(which zsh)
+if [ ! "$(basename -- "$SHELL")" = "zsh" ]; then
+    chsh -s $(which zsh)
+fi
 
 # kanata系统服务
 sudo cp {{ .chezmoi.config.sourceDir -}}/system/services/kanata.service /etc/systemd/system/
@@ -15,9 +17,6 @@ systemctl --user add-wants niri.service dms
 
 # 设置fcitx5为默认输入法
 imsettings-switch fcitx5
-
-# 单独为微信设置环境变量
-sed -i 's|^Exec=.*|Exec=env GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx /usr/bin/wechat %U|' {{ .chezmoi.homeDir -}}/.local/share/applications/wechat.desktop
 
 # 单独安装verysync
 if [ ! -d "/usr/bin/verysync" ]; then

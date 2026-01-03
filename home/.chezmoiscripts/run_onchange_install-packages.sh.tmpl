@@ -14,4 +14,10 @@ if ! rpm -q --quiet {{ .name }}; then
 fi
 {{ end -}}
 
+{{ range .packages.fedora.flatpak -}}
+if ! flatpak info {{ . }} >/dev/null 2>&1; then
+    sudo flatpak install flathub {{ . | quote }}
+fi
+{{ end -}}
+
 {{ end -}}
