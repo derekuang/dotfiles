@@ -70,7 +70,7 @@ hotkey-overlay {
     skip-at-startup
 }
 
-spawn-sh-at-startup "qs -c dms"
+spawn-sh-at-startup "qs -c noctalia-shell"
 
 prefer-no-csd
 
@@ -166,8 +166,13 @@ recent-windows {
     }
 }
 
-// Add to the end of ~/.config/niri/config.kdl
-include "dms/colors.kdl"
-include "dms/layout.kdl"
-include "dms/alttab.kdl"
-include "dms/binds.kdl"
+debug {
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
+}
+
+include "colors.kdl"
+include "layout.kdl"
+include "alttab.kdl"
+include "binds.kdl"
+include "wpblur.kdl"

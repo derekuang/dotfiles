@@ -15,6 +15,7 @@ packages:
       - 'mpv'
       - 'neovim'
       - 'niri'
+      - 'noctalia-shell'
       - 'tldr'
       - 'tmux'
       - 'wezterm'
