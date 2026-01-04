@@ -14,6 +14,23 @@ sudo systemctl enable kanata.service
 # 设置fcitx5为默认输入法
 imsettings-switch fcitx5
 
+# 设置gtk程序配置
+add_gtk_im_module() {
+    local file_path="$1"
+
+    if [[ ! -f "$file_path" ]]; then
+        return 0
+    fi
+
+    if ! grep -q "^gtk-im-module" "$file_path"; then
+        echo "gtk-im-module=fcitx" >> "$file_path"
+    fi
+}
+add_gtk_im_module {{ .chezmoi.homeDir -}}/.gtkrc-2.0
+add_gtk_im_module {{ .chezmoi.homeDir -}}/.config/gtk-3.0/settings.ini
+add_gtk_im_module {{ .chezmoi.homeDir -}}/.config/gtk-4.0/settings.ini
+add_gtk_im_module {{ .chezmoi.homeDir -}}/.config/gtk-5.0/settings.ini
+
 # 单独安装verysync
 if [ ! -d "/usr/bin/verysync" ]; then
     curl -k https://www.verysync.com/shell/verysync-linux-installer/go-installer.sh > {{ .chezmoi.homeDir -}}/tmp/go-installer.sh
