@@ -3,10 +3,14 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-[cd]
-    command = "/usr/bin/zsh"
 [data]
     osid = {{ $osid | quote }}
+[diff]
+    command = "zed"
+    args = ["--wait", "--diff", "{{ `{{ .Destination }}` }}", "{{ `{{ .Target }}` }}"]
 [edit]
     command = "zed"
     args = ["--wait"]
+    apply = true
+[git]
+    autoAdd = true
