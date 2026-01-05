@@ -23,6 +23,7 @@ packages:
       - 'zsh'
     flatpak:
       - com.tencent.WeChat
+      - io.missioncenter.MissionCenter
       - org.onlyoffice.desktopeditors
     rpm:
       -

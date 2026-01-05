@@ -2,6 +2,12 @@ binds {
     // === System & Overview ===
     Mod+Tab repeat=false { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+Alt+L hotkey-overlay-title="Lock Screen" {
+        spawn-sh "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend";
+    }
+    Ctrl+Alt+Delete hotkey-overlay-title="Mission Center" {
+        spawn-sh "flatpak run io.missioncenter.MissionCenter";
+    }
 
     // === Application Launchers ===
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "wezterm"; }
@@ -20,14 +26,6 @@ binds {
     }
     Mod+N hotkey-overlay-title="Notification Center" {
         spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory";
-    }
-
-    // === Security ===
-    Mod+Alt+L hotkey-overlay-title="Lock Screen" {
-        spawn-sh "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend";
-    }
-    Ctrl+Alt+Delete hotkey-overlay-title="Control Center" {
-        spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle";
     }
 
     // === Window Management ===
