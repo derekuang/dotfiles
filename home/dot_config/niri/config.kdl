@@ -311,6 +311,8 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // Override environment variables for processes spawned by niri.
 environment {
+    EDITOR "zed"
+    QT_QPA_PLATFORMTHEME "qt6ct"
     XDG_CURRENT_DESKTOP "niri"
 }
 
