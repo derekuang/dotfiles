@@ -21,3 +21,9 @@
     url = "https://github.com/romkatv/powerlevel10k/archive/v1.20.0.tar.gz"
     exact = true
     stripComponents = 1
+[".local/share/fcitx5/rime"]
+    type = "archive"
+    url = "https://github.com/iDvel/rime-ice/archive/refs/tags/nightly.tar.gz"
+    stripComponents = 1
+    refreshPeriod = "168h"
+    exclude = ["*/custom_phrase.txt", "*/default.yaml"]
