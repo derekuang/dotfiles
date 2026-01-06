@@ -376,6 +376,8 @@ return {
 
   -- general begin
 
+  enable_wayland = false,
+
   -- behaviours
   check_for_updates = false,
 
