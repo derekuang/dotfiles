@@ -1,5 +1,5 @@
 {{ if eq .osid "linux-fedora" -}}
-#!/bin/bash
+#!/usr/bin/env bash
 
 {{ range .packages.fedora.dnf -}}
 if ! rpm -q --quiet {{ . }}; then
