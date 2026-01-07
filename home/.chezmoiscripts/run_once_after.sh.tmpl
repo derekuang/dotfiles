@@ -11,6 +11,12 @@ sudo cp {{ .chezmoi.config.sourceDir -}}/system/services/kanata.service /etc/sys
 sudo systemctl daemon-reload
 sudo systemctl enable kanata.service
 
+# resilio-sync系统服务
+sudo systemctl enable resilio-sync
+sudo usermod -aG kyd rslsync # 把rslsync添加到本地用户组使得可以访问用户目录
+sudo usermod -aG rslsync kyd # 把本地用户添加到rslsync组使得可以访问同步目录
+sudo chmod g+rwx {{ .chezmoi.homeDir -}}/ # 给组用户添加权限
+
 # 设置fcitx5为默认输入法
 imsettings-switch fcitx5
 
@@ -31,14 +37,8 @@ add_gtk_im_module {{ .chezmoi.homeDir -}}/.config/gtk-3.0/settings.ini
 add_gtk_im_module {{ .chezmoi.homeDir -}}/.config/gtk-4.0/settings.ini
 add_gtk_im_module {{ .chezmoi.homeDir -}}/.config/gtk-5.0/settings.ini
 
-# 单独安装verysync
-if [ ! -d "/usr/bin/verysync" ]; then
-    curl -k https://www.verysync.com/shell/verysync-linux-installer/go-installer.sh > {{ .chezmoi.homeDir -}}/tmp/go-installer.sh
-    chmod +x {{ .chezmoi.homeDir -}}/tmp/go-installer.sh
-    sudo {{ .chezmoi.homeDir -}}/tmp/go-installer.sh
-fi
-
 # 其它：
 # 手动安装NVIDIA驱动
+# 重启生效关闭SELinux
 
 {{ end -}}
