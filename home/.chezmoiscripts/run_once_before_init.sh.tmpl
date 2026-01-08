@@ -18,7 +18,7 @@ fi
 
 # flathub仓库
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak update --appstream
+# flatpak update --appstream
 
 # copr第三方源
 {{ range .packages.fedora.copr -}}

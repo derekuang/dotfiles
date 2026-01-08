@@ -1,14 +1,13 @@
 packages:
   fedora:
     dnf:
+      - 'dms'
       - 'fcitx5'
       - 'fcitx5-rime'
       - 'fsearch'
       - 'git'
-      - 'google-chrome-stable'
       - 'librime-lua'
       - 'maple-mono-nf-cn'
-      - 'mpv'
       - 'neovim'
       - 'niri'
       - 'noctalia-shell'
@@ -20,15 +19,17 @@ packages:
       - 'zed'
       - 'zsh'
     flatpak:
+      - com.google.Chrome
       - com.tencent.WeChat
       - io.missioncenter.MissionCenter
       - org.onlyoffice.desktopeditors
     copr:
       - 'agonie/Maple-mono-nf-cn'
+      - 'avengemedia/dms'
       - 'cboxdoerfer/fsearch'
       - 'lihaohong/yazi'
       - 'wezfurlong/wezterm-nightly'
     rpm:
-      -
-        # name: clash-verge
-        # url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge-2.4.4-1.x86_64.rpm'
+      # -
+      #   name: clash-verge
+      #   url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge-2.4.4-1.x86_64.rpm'
