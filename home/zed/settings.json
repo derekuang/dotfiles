@@ -78,6 +78,10 @@
     "show": false
   },
   /* Panels */
+  // Git Panel
+  "git_panel": {
+    "tree_view": true
+  },
   // Notification Panel
   "notification_panel": {
     "button": false

@@ -14,7 +14,7 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "/": ["vim::Search", { "regex": false }]
+      "/": "buffer_search::Deploy"
     }
   },
   {
