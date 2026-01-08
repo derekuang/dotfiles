@@ -1,22 +1,24 @@
 {{ if eq .osid "linux-fedora" -}}
 #!/usr/bin/env bash
 
-# 代理
-# 换源
-#sudo sed -e 's|^metalink=|#metalink=|g' \
-#    -e 's|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.tuna.tsinghua.edu.cn/fedora|g' \
-#    -i.bak \
-#    /etc/yum.repos.d/fedora.repo \
-#    /etc/yum.repos.d/fedora-updates.repo
-#sudo dnf makecache
-
 # 关闭SELinux
 sudo sed -i 's|SELINUX=enforcing|SELINUX=disabled|g' /etc/selinux/config
+
+# RPM Fushion源
+if ! dnf repolist list | grep rpmfusion -q; then
+    sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+fi
 
 # Terra软件源
 if ! dnf repo list | grep terra -q; then
     sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 fi
+
+# flathub仓库
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update --appstream
 
 # copr第三方源
 {{ range .packages.fedora.copr -}}
@@ -24,10 +26,6 @@ fi
         sudo dnf copr enable {{ . }}
     fi
 {{ end -}}
-
-# flathub仓库
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak update --appstream
 
 # Resilio-Sync包
 sudo rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc
