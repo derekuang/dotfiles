@@ -27,3 +27,7 @@
     stripComponents = 1
     refreshPeriod = "168h"
     exclude = ["*/custom_phrase.txt", "*/default.yaml"]
+[".config/nvim"]
+    type = "git-repo"
+    url = "git@github.com:LazyVim/starter.git"
+    refreshPeriod = "168h"
