@@ -7,15 +7,12 @@ environment {
 binds {
     // === System & Overview ===
     Mod+Tab repeat=false { toggle-overview; }
-    Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Alt+L hotkey-overlay-title="Lock Screen" {
         spawn-sh "qs -c noctalia-shell ipc call sessionMenu lockAndSuspend";
     }
     Ctrl+Alt+Delete hotkey-overlay-title="Mission Center" {
         spawn-sh "flatpak run io.missioncenter.MissionCenter";
     }
-    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-    Mod+Shift+P { power-off-monitors; }
 
     // === Application Launchers ===
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "wezterm"; }
