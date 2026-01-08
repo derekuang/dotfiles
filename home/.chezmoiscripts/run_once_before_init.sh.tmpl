@@ -31,4 +31,7 @@ flatpak update --appstream
 sudo rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc
 sudo cp {{ .chezmoi.config.sourceDir -}}/system/yum.repos.d/resilio-sync.repo /etc/yum.repos.d/
 
+# 刷新软件仓库
+sudo dnf makecache
+
 {{ end -}}
