@@ -17,6 +17,9 @@ sudo usermod -aG rslsync kyd # 把本地用户添加到rslsync组使得可以访
 sudo chmod g+rwx {{ .chezmoi.homeDir -}}/ # 给组用户添加权限
 sudo systemctl enable resilio-sync
 
+# jelly-fin系统服务
+sudo systemctl enable jellyfin
+
 # 设置fcitx5为默认输入法
 imsettings-switch fcitx5
 

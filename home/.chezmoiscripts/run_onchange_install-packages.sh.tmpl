@@ -3,7 +3,7 @@
 
 {{ range .packages.fedora.dnf -}}
 if ! rpm -q --quiet {{ . }}; then
-    sudo dnf install {{ . | quote }}
+    sudo dnf install {{ . | quote }} --allowerasing
 fi
 {{ end -}}
 
@@ -16,7 +16,7 @@ fi
 
 {{ range .packages.fedora.flatpak -}}
 if ! flatpak info {{ . }} >/dev/null 2>&1; then
-    sudo flatpak install flathub {{ . | quote }}
+    flatpak install flathub {{ . | quote }}
 fi
 {{ end -}}
 

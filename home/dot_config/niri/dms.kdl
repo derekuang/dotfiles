@@ -15,7 +15,7 @@ binds {
         spawn "dms" "ipc" "call" "lock" "lock";
     }
     Ctrl+Alt+Delete hotkey-overlay-title="Mission Center" {
-        spawn-sh "flatpak run io.missioncenter.MissionCenter";
+        spawn "missioncenter";
     }
 
     // === Application Launchers ===

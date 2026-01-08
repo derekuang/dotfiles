@@ -16,6 +16,8 @@ packages:
       - 'tmux'
       - 'zsh'
       # RPM Fusion
+      - 'ffmpeg'
+      - 'jellyfin'
       # *Inc.
       - 'google-chrome-stable'
       - 'resilio-sync'
@@ -29,6 +31,7 @@ packages:
       - 'wezterm'
     flatpak:
       - com.tencent.WeChat
+      - org.jellyfin.JellyfinDesktop
       - org.onlyoffice.desktopeditors
     rpm:
       # -
