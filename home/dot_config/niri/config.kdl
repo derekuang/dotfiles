@@ -287,7 +287,7 @@ layout {
 // spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-spawn-sh-at-startup "qs -c noctalia-shell"
+// spawn-sh-at-startup ""
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -312,7 +312,6 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // Override environment variables for processes spawned by niri.
 environment {
     EDITOR "zed"
-    QT_QPA_PLATFORMTHEME "qt6ct"
     XDG_CURRENT_DESKTOP "niri"
 }
 
@@ -722,7 +721,7 @@ binds {
 }
 
 debug {
-    // Allows notification actions and window activation from Noctalia.
+    // Allows notification actions and window activation
     honor-xdg-activation-with-invalid-serial
 }
 
