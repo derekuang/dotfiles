@@ -12,10 +12,10 @@ sudo systemctl daemon-reload
 sudo systemctl enable kanata.service
 
 # resilio-sync系统服务
-sudo systemctl enable resilio-sync
 sudo usermod -aG kyd rslsync # 把rslsync添加到本地用户组使得可以访问用户目录
 sudo usermod -aG rslsync kyd # 把本地用户添加到rslsync组使得可以访问同步目录
 sudo chmod g+rwx {{ .chezmoi.homeDir -}}/ # 给组用户添加权限
+sudo systemctl enable resilio-sync
 
 # 设置fcitx5为默认输入法
 imsettings-switch fcitx5
