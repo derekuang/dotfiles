@@ -372,7 +372,7 @@ return {
     family = "Maple Mono NF CN",
     harfbuzz_features = { "calt=0", "cv01", "cv35" },
   }),
-  font_size = 11,
+  font_size = 9,
 
   -- general begin
 

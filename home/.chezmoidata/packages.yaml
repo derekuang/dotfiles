@@ -1,34 +1,35 @@
 packages:
-  fedora:
-    dnf:
-      - 'dms'
-      - 'fcitx5'
-      - 'fcitx5-rime'
-      - 'fsearch'
-      - 'git'
-      - 'librime-lua'
-      - 'maple-mono-nf-cn'
-      - 'neovim'
-      - 'niri'
-      - 'noctalia-shell'
-      - 'resilio-sync'
-      - 'tldr'
-      - 'tmux'
-      - 'wezterm'
-      - 'yazi'
-      - 'zed'
-      - 'zsh'
-    flatpak:
-      - com.google.Chrome
-      - com.tencent.WeChat
-      - io.missioncenter.MissionCenter
-      - org.onlyoffice.desktopeditors
+  fedora: # Prefer Vendor: Fedora Project -> RPM Fusion -> *Inc. -> Terra -> Fedora Copr -> <NULL>纯rpm包安装
     copr:
       - 'agonie/Maple-mono-nf-cn'
       - 'avengemedia/dms'
-      - 'cboxdoerfer/fsearch'
-      - 'lihaohong/yazi'
       - 'wezfurlong/wezterm-nightly'
+    dnf:
+      # Fedora Project
+      - 'fcitx5'
+      - 'fcitx5-rime'
+      - 'git'
+      - 'librime-lua'
+      - 'neovim'
+      - 'niri'
+      - 'tldr'
+      - 'tmux'
+      - 'zsh'
+      # RPM Fusion
+      # *Inc.
+      - 'google-chrome-stable'
+      - 'resilio-sync'
+      # Terra
+      - 'mission-center'
+      - 'yazi'
+      - 'zed'
+      # Fedora Copr
+      - 'dms'
+      - 'maple-mono-nf-cn'
+      - 'wezterm'
+    flatpak:
+      - com.tencent.WeChat
+      - org.onlyoffice.desktopeditors
     rpm:
       # -
       #   name: clash-verge
