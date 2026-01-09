@@ -1,5 +1,5 @@
 packages:
-  fedora: # Prefer Vendor: Fedora Project -> RPM Fusion -> *Inc. -> Terra -> Fedora Copr -> <NULL>纯rpm包安装
+  fedora:
     copr:
       - 'agonie/Maple-mono-nf-cn'
       - 'avengemedia/dms'
@@ -34,6 +34,3 @@ packages:
       - org.jellyfin.JellyfinDesktop
       - org.onlyoffice.desktopeditors
     rpm:
-      # -
-      #   name: clash-verge
-      #   url: 'https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.4/Clash.Verge-2.4.4-1.x86_64.rpm'
