@@ -52,6 +52,8 @@
   "soft_wrap": "editor_width",
   // Formatting
   "format_on_save": "off",
+  // Whitespace
+  "always_treat_brackets_as_autoclosed": true,
   // Miscellaneous
   "middle_click_paste": false,
   "colorize_brackets": true,
