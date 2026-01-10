@@ -30,7 +30,7 @@
   
     `chezmoi apply`
   
-  - 一些快捷操作
+  - 一些小技巧
   
     `chezmoi edit --apply ~/.gitconfig` - 关闭目标文件后自动应用修改
     
