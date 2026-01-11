@@ -16,6 +16,8 @@
 
   - `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME`
   
+  - `git remote set-url origin git@github.com:$GITHUB_USERNAME/dotfiles.git` - 拉取后设置git仓库url让后续正常push推送
+  
 2. 在机器中拉取更新并直接应用更新（背后是git autostash rebase，可以放心拉取）
 
   - `chezmoi update`
