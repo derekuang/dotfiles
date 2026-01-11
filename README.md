@@ -6,6 +6,10 @@
 
 - 代理工具配置，本人使用坚果云同步FlClash配置
 
+- macos额外操作
+  
+  - 安装`homebrew`
+
 ## 日常操作
 
 1. 在新的机器拉取安装chezmoi和个人仓库的dotfiles

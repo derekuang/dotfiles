@@ -1,5 +1,5 @@
-{{ if eq .osid "linux-fedora" -}}
 #!/usr/bin/env bash
+{{ if eq .osid "linux-fedora" -}}
 
 # 设置zsh为默认shell
 if [ ! "$(basename -- "$SHELL")" = "zsh" ]; then
@@ -43,5 +43,14 @@ add_gtk_im_module {{ .chezmoi.homeDir -}}/.config/gtk-5.0/settings.ini
 # 其它：
 # 手动安装NVIDIA驱动
 # 重启生效关闭SELinux
+
+{{ end -}}
+
+{{ if eq .osid "darwin" -}}
+
+# yazi插件
+if ! ya pack -l | grep 'full-border' &>/dev/null; then
+    ya pack -a yazi-rs/plugins:full-border
+fi
 
 {{ end -}}

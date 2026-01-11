@@ -1,5 +1,5 @@
-{{ if eq .osid "linux-fedora" -}}
 #!/usr/bin/env bash
+{{ if eq .osid "linux-fedora" -}}
 
 {{ range .packages.fedora.dnf -}}
 if ! rpm -q --quiet {{ . }}; then
@@ -19,5 +19,30 @@ if ! flatpak info {{ . }} >/dev/null 2>&1; then
     flatpak install flathub {{ . | quote }}
 fi
 {{ end -}}
+
+{{ end -}}
+
+{{ if eq .osid "darwin" -}}
+
+{{ range .packages.darwin.cask -}}
+if ! brew list {{ . }} &>/dev/null; then
+    brew install --cask {{ . | quote }}
+fi
+{{ end -}}
+
+{{ range .packages.darwin.formula -}}
+if ! brew list {{ . }} &>/dev/null; then
+    brew install {{ . | quote }}
+fi
+{{ end -}}
+
+# 安装小企鹅输入法
+if ! defaults read ~/Library/Preferences/com.apple.HIToolbox AppleInputSourceHistory | grep -i fcitx5 &>/dev/null; then
+    cd /tmp
+    rm -rf Fcitx5Installer.app
+    curl -LO https://github.com/fcitx-contrib/fcitx5-macos-installer/releases/download/latest/Fcitx5-Rime.zip
+    unzip Fcitx5-Rime.zip
+    open Fcitx5Installer.app
+fi
 
 {{ end -}}

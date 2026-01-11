@@ -34,3 +34,29 @@ packages:
       - org.jellyfin.JellyfinDesktop
       - org.onlyoffice.desktopeditors
     rpm:
+  darwin:
+    cask:
+      - 'font-maple-mono-nf-cn'
+      - 'google-chrome'
+      - 'iina'
+      - 'resilio-sync'
+      # - 'wechat'
+      - 'wezterm'
+      - 'wpsoffice-cn'
+      # - 'zed'
+    formula:
+      - 'fd'
+      - 'ffmpeg'
+      - 'font-symbols-only-nerd-font'
+      - 'fzf'
+      - 'imagemagick'
+      - 'jq'
+      - 'neovim'
+      - 'poppler'
+      - 'resvg'
+      - 'ripgrep'
+      - 'sevenzip'
+      - 'tlrc'
+      - 'tmux'
+      - 'yazi'
+      - 'zoxide'
