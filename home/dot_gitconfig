@@ -4,7 +4,7 @@
 [branch "main"]
     mergeoptions = --no-ff
 [core]
-    autocrlf = true
+    autocrlf = input
     protectNTFS = false
 [fetch]
     prune = true
