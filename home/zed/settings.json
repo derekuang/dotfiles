@@ -32,6 +32,11 @@
     "use_smartcase_find": true
   },
   /* Editor */
+  // Which-key Menu
+  "which_key": {
+    "enabled": true,
+    "delay_ms": 200
+  },
   // Scrolling
   "scroll_beyond_last_line": "off",
   "vertical_scroll_margin": 0,
