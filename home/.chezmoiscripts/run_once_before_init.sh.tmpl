@@ -33,11 +33,6 @@ if ! rpm -q --quiet google-chrome-stable; then
     sudo cp {{ .chezmoi.config.sourceDir -}}/system/yum.repos.d/google-chrome.repo /etc/yum.repos.d/
 fi
 
-# Resilio-Sync
-if ! rpm -q --quiet resilio-sync; then
-    sudo rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc
-    sudo cp {{ .chezmoi.config.sourceDir -}}/system/yum.repos.d/resilio-sync.repo /etc/yum.repos.d/
-fi
 
 # 刷新软件仓库
 sudo dnf makecache

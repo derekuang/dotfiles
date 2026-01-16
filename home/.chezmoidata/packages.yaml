@@ -20,7 +20,6 @@ packages:
       - 'jellyfin'
       # *Inc.
       - 'google-chrome-stable'
-      - 'resilio-sync'
       # Terra
       - 'mission-center'
       - 'yazi'
@@ -39,7 +38,6 @@ packages:
       - 'font-maple-mono-nf-cn'
       - 'google-chrome'
       - 'iina'
-      - 'resilio-sync'
       # - 'wechat'
       - 'wezterm'
       - 'wpsoffice-cn'
