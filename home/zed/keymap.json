@@ -23,7 +23,11 @@
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-l": "workspace::ActivatePaneRight"
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-shift-alt-h": "vim::ResizePaneLeft",
+      "ctrl-shift-alt-j": "vim::ResizePaneDown",
+      "ctrl-shift-alt-k": "vim::ResizePaneUp",
+      "ctrl-shift-alt-l": "vim::ResizePaneRight",
     }
   },
   {
@@ -60,7 +64,12 @@
       "ctrl-d": ["workspace::SendKeystrokes", "5 g j 5 ctrl-e"],
       "ctrl-u": ["workspace::SendKeystrokes", "5 g k 5 ctrl-y"],
       "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
       "shift-y": "vim::YankToEndOfLine"
     }
   },
