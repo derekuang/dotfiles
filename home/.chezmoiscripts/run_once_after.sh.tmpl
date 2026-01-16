@@ -11,6 +11,11 @@ sudo cp {{ .chezmoi.config.sourceDir -}}/system/services/kanata.service /etc/sys
 sudo systemctl daemon-reload
 sudo systemctl enable kanata.service
 
+# onedrive系统服务
+sudo cp {{ .chezmoi.config.sourceDir -}}/system/services/onedrive.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable onedrive.service
+
 # jellyfin系统服务
 sudo systemctl enable jellyfin
 

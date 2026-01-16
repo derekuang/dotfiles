@@ -1,0 +1,12 @@
+[Unit]
+Description=OneDrive Background Sync
+After=network.target
+Documentation=https://github.com/abraunegg/onedrive
+
+[Service]
+ExecStart=/usr/bin/onedrive --monitor
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
