@@ -12,12 +12,6 @@
     }
   },
   {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "/": "buffer_search::Deploy"
-    }
-  },
-  {
     "context": "VimControl || !Editor",
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
