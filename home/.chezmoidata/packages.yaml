@@ -9,6 +9,7 @@ packages:
       - 'fcitx5'
       - 'fcitx5-rime'
       - 'git'
+      - 'google-chrome-stable'
       - 'librime-lua'
       - 'neovim'
       - 'niri'
@@ -20,7 +21,7 @@ packages:
       - 'ffmpeg'
       - 'jellyfin'
       # *Inc.
-      - 'google-chrome-stable'
+      # -
       # Terra
       - 'mission-center'
       - 'yazi'
