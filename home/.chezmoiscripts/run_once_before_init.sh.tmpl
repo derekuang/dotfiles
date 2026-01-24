@@ -28,11 +28,10 @@ flatpak update --appstream
 {{ end -}}
 
 # google-chrome
-if ! rpm -q --quiet google-chrome-stable; then
-    sudo rpm --import https://dl.google.com/linux/linux_signing_key.pub
-    sudo cp {{ .chezmoi.config.sourceDir -}}/system/yum.repos.d/google-chrome.repo /etc/yum.repos.d/
+if ! rpm -q --quiet fedora-workstation-repostories; then
+    sudo dnf install fedora-workstation-repositories
+    sudo dnf config-manager setopt google-chrome.enabled=1
 fi
-
 
 # 刷新软件仓库
 sudo dnf makecache
