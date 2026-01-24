@@ -33,6 +33,7 @@ packages:
       - com.tencent.WeChat
       - org.jellyfin.JellyfinDesktop
       - org.onlyoffice.desktopeditors
+      - org.telegram.desktop
     rpm:
   darwin:
     cask:
