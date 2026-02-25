@@ -120,6 +120,8 @@
       "provider": "deepseek",
       "model": "deepseek-reasoner"
     },
-    "always_allow_tool_actions": true
+    "tool_permissions": {
+      "default": "allow"
+    }
   }
 }
