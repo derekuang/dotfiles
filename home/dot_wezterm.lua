@@ -29,7 +29,7 @@ local set_process_name = function(s)
   return a:gsub("%.exe$", "")
 end
 
-local set_title = function(process_name, static_title, active_title, )
+local set_title = function(process_name, static_title, active_title)
   local title
 
   if static_title:len() > 0 then
