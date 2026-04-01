@@ -8,38 +8,6 @@ local platform = {
 
 -- events begin
 
--- update-right-status
-wezterm.on("update-right-status", function(window, _pane)
-  local cells = {}
-  local colors = {
-    date_fg = "#82AAFF",
-    date_bg = "#303446",
-    key_table_fg = "#9D91E6",
-    key_table_bg = "#303446",
-  }
-  local push = function(text, icon, fg, bg)
-    table.insert(cells, { Foreground = { Color = fg } })
-    table.insert(cells, { Background = { Color = bg } })
-    table.insert(cells, { Attribute = { Intensity = "Bold" } })
-    table.insert(cells, { Text = icon .. " " .. text .. "  " })
-    table.insert(cells, "ResetAttributes")
-  end
-
-  -- key table
-  local key_table = window:active_key_table()
-  if key_table then
-    local key_table_icon = " " .. nf.cod_lightbulb .. " "
-    push(key_table, key_table_icon, colors.key_table_fg, colors.key_table_bg)
-  end
-
-  -- date
-  local date = wezterm.strftime("%a %H:%M:%S")
-  local date_icon = " " .. nf.fa_calendar .. " "
-  push(date, date_icon, colors.date_fg, colors.date_bg)
-
-  window:set_right_status(wezterm.format(cells))
-end)
-
 -- format-tab-title
 local GLYPH_NUMBER = {
   [1] = nf.md_numeric_1_circle,
@@ -55,39 +23,24 @@ local GLYPH_NUMBER = {
 }
 local GLYPH_SEMI_CIRCLE_LEFT = nf.ple_left_half_circle_thick
 local GLYPH_SEMI_CIRCLE_RIGHT = nf.ple_right_half_circle_thick
-local GLYPH_ADMIN
-if platform.is_win then
-  GLYPH_ADMIN = nf.dev_windows
-elseif platform.is_mac then
-  GLYPH_ADMIN = nf.dev_apple
-elseif platform.is_linux then
-  GLYPH_ADMIN = nf.dev_linux
-end
 
 local set_process_name = function(s)
   local a = string.gsub(s, "(.*[/\\])(.*)", "%2")
   return a:gsub("%.exe$", "")
 end
 
-local set_title = function(process_name, static_title, active_title, _max_width, _inset)
+local set_title = function(process_name, static_title, active_title, )
   local title
 
-  if process_name:len() > 0 and static_title:len() == 0 then
-    title = process_name
-  elseif static_title:len() > 0 then
+  if static_title:len() > 0 then
     title = static_title
+  elseif process_name:len() > 0 then
+    title = process_name
   else
     title = active_title
   end
 
   return title
-end
-
-local check_if_admin = function(p)
-  if p:match("^Administrator: ") then
-    return true
-  end
-  return false
 end
 
 wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, _hover, max_width)
@@ -100,8 +53,7 @@ wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, _hover, max
   end
 
   local process_name = set_process_name(tab.active_pane.foreground_process_name)
-  local is_admin = check_if_admin(tab.active_pane.title)
-  local title = set_title(process_name, tab.tab_title, tab.active_pane.title, max_width, (is_admin and 8))
+  local title = set_title(process_name, tab.tab_title, tab.active_pane.title)
 
   local bg, fg
   local colors = {
@@ -134,11 +86,6 @@ wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, _hover, max
   end
   push(bg, fg, { Intensity = "Bold" }, " " .. GLYPH_NUMBER[tab_index] .. " ")
 
-  -- Admin Icon
-  if is_admin then
-    push(bg, fg, { Intensity = "Bold" }, " " .. GLYPH_ADMIN .. " ")
-  end
-
   -- Title
   push(bg, fg, { Intensity = "Bold" }, " " .. title)
 
@@ -149,25 +96,6 @@ wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, _hover, max
   push(fg, bg, { Intensity = "Bold" }, GLYPH_SEMI_CIRCLE_RIGHT)
 
   return cells
-end)
-
--- new-tab-button-click
-wezterm.on("new-tab-button-click", function(window, pane, button, default_action)
-  wezterm.log_info("new-tab", window, pane, button, default_action)
-  if default_action and button == "Left" then
-    window:perform_action(default_action, pane)
-  end
-
-  if default_action and button == "Right" then
-    window:perform_action(
-      wezterm.action.ShowLauncherArgs({
-        title = "󰈲 Select/Search:",
-        flags = "FUZZY|LAUNCH_MENU_ITEMS|DOMAINS",
-      }),
-      pane
-    )
-  end
-  return false
 end)
 
 -- events end
@@ -186,61 +114,12 @@ elseif platform.is_win or platform.is_linux then
   mod.SUPER_REV = "CTRL|SHIFT"
 end
 
-local macros = {
-  -- example = {
-  --   { desc = "desc", macro = "text" }
-  -- }
-}
-
-local macro_prompt = function(name)
-  local prompt = ""
-  for index, macro in ipairs(macros[name]) do
-    prompt = prompt .. string.format("%s: %s\n", index, macro.desc)
-  end
-  return prompt
-end
-
-local find_macro_index = function(name, input)
-  if tonumber(input) then
-    return tonumber(input)
-  else
-    for i, macro in ipairs(macros[name]) do
-      if string.match(macro.desc, input) then
-        return i
-      end
-    end
-  end
-end
-
-local macro_prompt_args = function(name)
-  return {
-    description = "请输入指令：\n" .. macro_prompt(name),
-    action = wezterm.action_callback(function(window, pane, line)
-      if line then
-        local index = find_macro_index(name, line)
-        if index then
-          window:perform_action(
-            act.SendString(macros[name][index].macro),
-            pane
-          )
-        end
-      end
-    end),
-  }
-end
-
 local keys = {
   -- misc/useful --
   { key = "F11", mods = "NONE", action = act.ToggleFullScreen },
   { key = "F12", mods = "NONE", action = act.ShowDebugOverlay },
   { key = "p", mods = mod.SUPER_REV, action = act.ActivateCommandPalette },
   { key = "f", mods = mod.SUPER, action = act.Search({ CaseInSensitiveString = "" }) },
-
-  -- copy/paste --
-  { key = "x", mods = mod.SUPER_REV, action = "ActivateCopyMode" },
-  { key = "Space", mods = mod.SUPER_REV, action = "QuickSelect" },
-  { key = "c", mods = mod.SUPER_REV, action = act.CopyTo("Clipboard") },
-  { key = "v", mods = mod.SUPER_REV, action = act.PasteFrom("Clipboard") },
 
   -- tabs --
   -- tabs: spawn+close
@@ -249,14 +128,14 @@ local keys = {
 
   -- tabs: navigation
   { key = "Tab", mods = mod.SUPER, action = act.ActivateLastTab },
-  { key = "[", mods = "ALT", action = act.ActivateTabRelative(-1) },
-  { key = "]", mods = "ALT", action = act.ActivateTabRelative(1) },
-  { key = "[", mods = mod.SUPER_REV, action = act.MoveTabRelative(-1) },
-  { key = "]", mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
+  { key = "[", mods = mod.SUPER, action = act.ActivateTabRelative(-1) },
+  { key = "]", mods = mod.SUPER, action = act.ActivateTabRelative(1) },
+  { key = "[", mods = "ALT", action = act.MoveTabRelative(-1) },
+  { key = "]", mods = "ALT", action = act.MoveTabRelative(1) },
 
   -- window --
   -- spawn windows
-  { key = "n", mods = mod.SUPER_REV, action = act.SpawnWindow },
+  { key = "n", mods = mod.SUPER, action = act.SpawnWindow },
 
   -- navigate windows
   { key = "1", mods = mod.SUPER, action = act.ActivateTab(0) },
@@ -284,7 +163,7 @@ local keys = {
   {
     key = "q",
     mods = mod.SUPER,
-    action = act.CloseCurrentPane({ confirm = true }),
+    action = act.CloseCurrentPane({ confirm = false }),
   },
 
   -- panes: zoom+close pane
@@ -309,12 +188,7 @@ local keys = {
   { key = "r", mods = mod.SUPER, action = act.ResetFontSize },
 
   -- key-tables --
-  -- macros
-  -- {
-  --   key = "Space",
-  --   mods = "LEADER",
-  --   action = act.PromptInputLine(macro_prompt_args("example"))
-  -- },
+
   -- rename tab bar
   {
     key = "R",
@@ -330,9 +204,6 @@ local keys = {
   },
 }
 
-local key_tables = {
-}
-
 return {
   -- appearance begin
 
@@ -342,15 +213,11 @@ return {
   -- background
   window_background_opacity = 0.9,
 
-  -- tab bar
-  tab_max_width = 25,
-
   -- window
   adjust_window_size_when_changing_font_size = false,
-  window_decorations = "NONE",
-  initial_cols = 120,
-  initial_rows = 24,
-  window_close_confirmation = "AlwaysPrompt",
+  window_decorations = "RESIZE",
+  initial_cols = 180,
+  initial_rows = 36,
   window_frame = {
     active_titlebar_bg = "#303446",
     inactive_titlebar_bg = "#303446",
@@ -363,20 +230,17 @@ return {
   disable_default_key_bindings = true,
   leader = { key = "Space", mods = mod.SUPER },
   keys = keys,
-  key_tables = key_tables,
 
   -- keybindings end
 
   -- fonts
   font = wezterm.font({
     family = "Maple Mono NF CN",
-    harfbuzz_features = { "calt=0", "cv01", "cv35" },
+    harfbuzz_features = { "calt=0", "cv01", "cv34", "cv35", "cv37" },
   }),
-  font_size = 9,
+  font_size = 10,
 
   -- general begin
-
-  enable_wayland = false,
 
   -- behaviours
   check_for_updates = false,
