@@ -121,6 +121,10 @@ local keys = {
   { key = "p", mods = mod.SUPER_REV, action = act.ActivateCommandPalette },
   { key = "f", mods = mod.SUPER, action = act.Search({ CaseInSensitiveString = "" }) },
 
+  -- copy/paste --
+  { key = "c", mods = mod.SUPER_REV, action = act.CopyTo("Clipboard") },
+  { key = "v", mods = mod.SUPER_REV, action = act.PasteFrom("Clipboard") },
+
   -- tabs --
   -- tabs: spawn+close
   { key = "t", mods = mod.SUPER, action = act.SpawnTab("DefaultDomain") },
