@@ -1,0 +1,36 @@
+packages:
+  - clash-verge-rev
+  - homebrew
+  - ghostty
+  - fish
+  - zellij
+  - yazi
+  - starship
+  - font-maple-mono-nf-cn
+  - fcitx5
+  - fcitx5-rime
+  - google-chrome
+  - git
+  - kanata
+  - neovim
+  - onedrive
+  - zed
+  - wechat
+  - onlyoffice
+  - tailscale
+  - telegram
+  - stow
+
+containers:
+  - immich
+  - jellyfin
+
+optional:
+  - wezterm
+  - dms
+  - niri
+  - tldr
+  - tmux
+  - zsh
+  - mission-center
+  - wpsoffice

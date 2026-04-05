@@ -1,7 +1,0 @@
-[
-  {
-    "label": "chezmoi apply",
-    "command": "chezmoi apply",
-    "hide": "on_success"
-  }
-]
