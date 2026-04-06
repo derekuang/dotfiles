@@ -17,6 +17,7 @@ packages:
   - zed
   - wechat
   - onlyoffice
+  - flameshot
   - tailscale
   - telegram
   - stow
