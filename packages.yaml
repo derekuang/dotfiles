@@ -20,6 +20,7 @@ packages:
   - tailscale
   - telegram
   - stow
+  - podman
 
 containers:
   - immich
@@ -34,3 +35,4 @@ optional:
   - zsh
   - mission-center
   - wpsoffice
+  - docker
