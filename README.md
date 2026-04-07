@@ -25,6 +25,8 @@
 
 ## 加密文件处理
 
+- **！！！一定要把`decrypt_file`添加到`.gitignore`！！！**
+
 - 加密： `openssl enc -aes-256-cbc -salt -pbkdf2 -iter 1000000 -in /path/of/decrypt/file -out /path/of/encrypt/file`
 
 - 解密： `openssl enc -d -aes-256-cbc -pbkdf2 -iter 1000000 -in /path/of/encrypt/file -out /path/of/decrypt/file`
