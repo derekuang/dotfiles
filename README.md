@@ -19,6 +19,10 @@
 `cd ~/dotfiles && mkdir $PACKAGE # 如果还没创建包目录` 
 `stow --adopt /path/to/target/file`
 
+4. 卸载软件后，移除相关的配置文件symlink
+
+`stow -D $PACKAGE`
+
 ## 加密文件处理
 
 - 加密： `openssl enc -aes-256-cbc -salt -pbkdf2 -iter 1000000 -in /path/of/decrypt/file -out /path/of/encrypt/file`
