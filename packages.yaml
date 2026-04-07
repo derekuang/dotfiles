@@ -1,41 +1,49 @@
-packages:
-  - clash-verge-rev
+infra:
+  - clash-verge-rev # flclash
+  - git
   - homebrew
-  - ghostty
-  - fish
-  - zellij
-  - yazi
-  - starship
-  - font-maple-mono-nf-cn
+  - stow
+  - podman # docker
+
+input:
   - fcitx5
   - fcitx5-rime
-  - google-chrome
-  - git
   - kanata
-  - neovim
-  - onedrive
-  - zed
-  - wechat
-  - onlyoffice
-  - flameshot
-  - tailscale
-  - telegram
-  - stow
-  - podman
-  - gearlever
+
+fonts:
+  - font-maple-mono-nf-cn
+
+terminal:
+  - ghostty # wezterm
+  - fish # zsh
+  - starship # zsh-power10k
+  - zellij # tmux
+  - yazi
   - tldr
 
-containers:
+editors:
+  - zed
+  - helix # neovim
+
+network:
+  - google-chrome
+  - tailscale
+  - onedrive
+
+messaging:
+  - wechat
+  - telegram
+
+services:
   - immich
   - jellyfin
 
-optional:
-  - wezterm
-  - dms
+window_manager:
   - niri
-  - tldr
-  - tmux
-  - zsh
+  - dms
+
+utilities:
+  - onlyoffice # wpsoffice
+  - flameshot
+  - gearlever
   - mission-center
-  - wpsoffice
-  - docker
