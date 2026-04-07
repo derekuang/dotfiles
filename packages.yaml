@@ -39,11 +39,14 @@ services:
   - jellyfin
 
 window_manager:
-  - niri
-  - dms
+  # - niri
+  # - dms
+
+office:
+  - onlyoffice # wpsoffice
 
 utilities:
-  - onlyoffice # wpsoffice
   - flameshot
   - gearlever
-  - mission-center
+  # - mission-center
+  # - solaar # logitech-unifying
