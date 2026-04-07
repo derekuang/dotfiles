@@ -19,13 +19,13 @@
 `cd ~/dotfiles && mkdir $PACKAGE # 如果还没创建包目录` 
 `stow --adopt /path/to/target/file`
 
-4. 卸载软件后，移除相关的配置文件symlink
+4. 卸载软件后，移除target目录相关的symlink
 
 `stow -D $PACKAGE`
 
-## 加密文件处理
+## 私密文件处理
 
-- **！！！一定要把`decrypt_file`添加到`.gitignore`！！！**
+- **！！！一定要把私密文件添加到`.gitignore`！！！**
 
 - 加密： `openssl enc -aes-256-cbc -salt -pbkdf2 -iter 1000000 -in /path/of/decrypt/file -out /path/of/encrypt/file`
 
