@@ -16,7 +16,7 @@
 
 3. 不管stow目录有无文件，target目录有真实文件，覆盖stow目录
 
-`mkdir -p /dir/to/stow/file && touch $STOW_FILE # 如果还没有源stow文件` 
+`mkdir -p /dir/to/stow/file && touch $STOW_FILE # 如果还没有源stow文件，创建一个空白同名文件` 
 `stow --adopt $PACKAGE`
 
 4. 卸载软件后，移除target目录相关的symlink

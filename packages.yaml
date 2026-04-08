@@ -22,13 +22,14 @@ terminal:
   - tldr
 
 editors:
-  - zed
-  - helix # neovim
+  - zed # vscode
+  - helix # neovim-lazyvim
+  # - typora
 
 network:
   - google-chrome
   - tailscale
-  - onedrive
+  - rclone # onedrive
 
 messaging:
   - wechat
