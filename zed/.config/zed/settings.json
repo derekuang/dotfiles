@@ -26,6 +26,7 @@
   /* Keymap */
   // Modal Editing
   "vim_mode": true,
+  "helix_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true
