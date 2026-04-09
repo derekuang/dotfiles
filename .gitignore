@@ -1,3 +1,4 @@
 .DS_Store
+.zed
 private/.private/keys.txt
 ssh/.ssh/id_ed25519
