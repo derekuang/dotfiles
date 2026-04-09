@@ -1,0 +1,23 @@
+[Unit]
+Description=Rclone mount OneDrive
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+User=kyd
+Group=kyd
+ExecStart=/usr/bin/rclone mount onedrive: /home/kyd/onedrive \
+  --vfs-cache-mode full \
+  --vfs-cache-max-size 5G \
+  --vfs-cache-max-age 24h \
+  --vfs-read-chunk-size 128M \
+  --vfs-read-chunk-size-limit off \
+  --filter-from /home/kyd/.config/rclone/exclude.txt \
+  --umask 022
+ExecStop=fusermount3 -u /home/kyd/onedrive
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
