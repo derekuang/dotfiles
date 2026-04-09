@@ -14,24 +14,31 @@
     }
   },
   {
-    "context": "Pane",
+    "context": "VimControl && !menu || !Editor && !Terminal",
     "bindings": {
-      "ctrl-alt-h": [
+      "ctrl-w ctrl-h": [
         "workspace::MoveItemToPaneInDirection",
         { "direction": "left" }
       ],
-      "ctrl-alt-j": [
+      "ctrl-w ctrl-l": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "down" }
+        { "direction": "right" }
       ],
-      "ctrl-alt-k": [
+      "ctrl-w ctrl-k": [
         "workspace::MoveItemToPaneInDirection",
         { "direction": "up" }
       ],
-      "ctrl-alt-l": [
+      "ctrl-w ctrl-j": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "right" }
+        { "direction": "down" }
       ]
+    }
+  },
+  {
+    "context": "vim_mode == helix_normal || vim_mode == helix_select",
+    "bindings": {
+      "g w": "vim::PushSneak",
+      "g shift-w": "vim::PushSneakBackward"
     }
   }
 ]
