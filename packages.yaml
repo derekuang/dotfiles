@@ -8,7 +8,7 @@ infra:
 input:
   - fcitx5
   - fcitx5-rime
-  - kanata
+  - kanata # Karabiner-Elements
 
 fonts:
   - font-maple-mono-nf-cn
