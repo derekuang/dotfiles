@@ -1,0 +1,22 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+color-modes = true
+
+# [editor.statusline]
+# center = ["position-percentage"]
+
+[editor.lsp]
+enable = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# [editor.file-picker]
+# hidden = false
+
+[editor.soft-wrap]
+enable = true
