@@ -35,6 +35,12 @@
     }
   },
   {
+    "context": "vim_mode == helix_normal",
+    "bindings": {
+      "escape": "editor::Cancel"
+    }
+  },
+  {
     "context": "vim_mode == helix_normal || vim_mode == helix_select",
     "bindings": {
       "g w": "vim::PushSneak",
