@@ -46,5 +46,15 @@
       "g w": "vim::PushSneak",
       "g shift-w": "vim::PushSneakBackward"
     }
+  },
+  // Zellij compatibility
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
+      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
+      "ctrl-s": ["terminal::SendKeystroke", "ctrl-s"],
+      "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"],
+    }
   }
 ]
