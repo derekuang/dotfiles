@@ -25,7 +25,7 @@ terminal:
 editors:
   - zed # vscode
   - helix # neovim-lazyvim
-  # - typora
+  - milkup # - typora
 
 network:
   - google-chrome
@@ -48,6 +48,7 @@ office:
   - onlyoffice # wpsoffice
 
 utilities:
+  - readest
   - flameshot
   - gearlever
   # - mission-center
