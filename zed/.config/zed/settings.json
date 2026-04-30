@@ -95,9 +95,6 @@
   },
   /* Terminal */
   "terminal": {
-    "shell": {
-      "program": "fish"
-    },
     "font_features": {
       "calt": false, // ligatures
       "cv01": true, // remove gaps
