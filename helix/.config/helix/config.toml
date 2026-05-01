@@ -4,9 +4,6 @@ theme = "catppuccin_macchiato"
 line-number = "relative"
 color-modes = true
 
-# [editor.statusline]
-# center = ["position-percentage"]
-
 [editor.lsp]
 enable = false
 
