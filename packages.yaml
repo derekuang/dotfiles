@@ -11,7 +11,7 @@ input:
   - kanata # Karabiner-Elements
 
 fonts:
-  - font-maple-mono-nf-cn
+  - font-maple-mono-nl-nf-cn
 
 terminal:
   - ghostty # wezterm

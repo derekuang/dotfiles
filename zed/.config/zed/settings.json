@@ -14,10 +14,9 @@
   // Theme
   "theme": "Catppuccin Macchiato",
   // Buffer Font
-  "buffer_font_family": "Maple Mono NF CN",
+  "buffer_font_family": "Maple Mono NL NF CN",
   "buffer_font_size": 13.0,
   "buffer_font_features": {
-    "calt": false, // ligatures
     "cv01": true, // remove gaps
     "cv34": true, // alternative italic k
     "cv35": true, // alternative italic l
@@ -95,8 +94,8 @@
   },
   /* Terminal */
   "terminal": {
+    "font_family": "Maple Mono NL NF CN",
     "font_features": {
-      "calt": false, // ligatures
       "cv01": true, // remove gaps
       "cv34": true, // alternative italic k
       "cv35": true, // alternative italic l
