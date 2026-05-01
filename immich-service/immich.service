@@ -1,0 +1,14 @@
+[Unit]
+Description=Immich (Podman Compose)
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/var/data/pictures/immich-app
+ExecStart=/usr/bin/podman compose up -d
+ExecStop=/usr/bin/podman compose down
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target
+
