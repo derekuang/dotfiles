@@ -36,16 +36,12 @@ messaging:
   - wechat
   - telegram
 
+office:
+  - onlyoffice # wpsoffice
+
 services:
   - immich
   - jellyfin
-
-window_manager:
-  # - niri
-  # - dms
-
-office:
-  - onlyoffice # wpsoffice
 
 utilities:
   - readest
