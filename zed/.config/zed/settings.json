@@ -114,8 +114,10 @@
     "show_turn_stats": true,
     "default_profile": "write",
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "deepseek",
-      "model": "deepseek-reasoner"
+      "model": "deepseek-v4-flash"
     },
     "tool_permissions": {
       "default": "allow"
