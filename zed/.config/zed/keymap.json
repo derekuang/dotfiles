@@ -40,6 +40,13 @@
       "escape": "editor::Cancel"
     }
   },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "bindings": {
+      "shift-l": "vim::WindowBottom",
+      "shift-h": "vim::WindowTop"
+    }
+  },
   // Zellij compatibility
   {
     "context": "Terminal",
