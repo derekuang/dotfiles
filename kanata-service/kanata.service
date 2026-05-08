@@ -1,6 +1,8 @@
 [Unit]
 Description=Kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
+After=var-home.mount
+Requires=var-home.mount
 
 [Service]
 ExecStart=/home/kyd/.local/bin/kanata --cfg /home/kyd/kanata.kbd
