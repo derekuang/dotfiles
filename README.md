@@ -35,8 +35,10 @@
 
 0. linux系统考虑关闭selinux
 
-1. 如果target目录不是`~`，需要用`-t`选项指定。如系统级的`.service`文件指定`-t /etc/systemd/system`
+1. 如果target目录不是`~`，需要用`-t`选项指定。如系统级的`.service`文件指定`-t ~/.config/systemd/user`
 
 2. 如果是给flatpak应用同步配置，要先开放`$HOME`目录权限
 
 `sudo flatpak override --system $APPID --filesystem=home`
+
+3. 有一些系统服务配置，如`kanata-service`，由于系统启动读取service文件是home目录还没挂载，所以symlink无法读取，要把文件直接复制到目标目录
