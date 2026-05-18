@@ -3,7 +3,7 @@ infra:
   - git
   - homebrew
   - stow
-  - podman # docker
+  - docker # podman
 
 input:
   - fcitx5
@@ -45,7 +45,6 @@ services:
 
 utilities:
   - readest
-  - flameshot
   - gearlever
   # - mission-center
   # - solaar # logitech-unifying
