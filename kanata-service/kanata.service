@@ -5,7 +5,7 @@ After=var-home.mount
 Requires=var-home.mount
 
 [Service]
-ExecStart=/home/kyd/.local/bin/kanata --cfg /home/kyd/kanata.kbd
+ExecStart=/home/kyd/.local/bin/kanata --cfg /home/kyd/.config/kanata/kanata.kbd
 Restart=no
 
 [Install]
