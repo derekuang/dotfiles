@@ -19,3 +19,5 @@
 [user]
     name = derekuang
     email = kuangyaode@gmail.com
+[safe]
+    directory = *
