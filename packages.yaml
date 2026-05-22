@@ -1,5 +1,5 @@
 infra:
-  - clash-verge-rev # flclash
+  - clash-verge-rev
   - git
   - homebrew
   - stow
