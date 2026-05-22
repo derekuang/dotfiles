@@ -9,6 +9,7 @@ input:
   - fcitx5
   - fcitx5-rime
   - kanata # Karabiner-Elements
+  - fusuma
 
 fonts:
   - font-maple-mono-nl-nf-cn

@@ -42,3 +42,9 @@
 `sudo flatpak override --system $APPID --filesystem=home`
 
 3. 有一些系统服务配置，如`kanata-service`，由于系统启动读取service文件是home目录还没挂载，所以symlink无法读取，要把文件直接复制到目标目录
+
+4. fusuma需要把用户添加到`input`组，在atomic desktop中需要特殊处理：
+```bash
+$ grep -E '^input:' /usr/lib/group | sudo tee -a /etc/group
+$ sudo usermod -aG input $USER
+```

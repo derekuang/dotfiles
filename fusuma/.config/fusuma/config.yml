@@ -1,0 +1,22 @@
+# plugins:
+# https://github.com/iberianpig/fusuma-plugin-sendkey
+
+rotate:
+  2:
+    clockwise:
+      sendkey: "LEFTCTRL+TAB"
+    counterclockwise:
+      sendkey: "LEFTCTRL+LEFTSHIFT+TAB"
+
+hold:
+  1:
+    sendkey: "VOLUMEDOWN"
+  2:
+    sendkey: "VOLUMEUP"
+  3:
+    sendkey: "F5"
+  4:
+    sendkey: "LEFTCTRL+LEFTSHIFT+T"
+
+threshold:
+  hold: 0.3
