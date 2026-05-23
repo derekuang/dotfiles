@@ -19,4 +19,5 @@ hold:
     sendkey: "LEFTCTRL+LEFTSHIFT+T"
 
 threshold:
+  rotate: 0.5
   hold: 0.3
