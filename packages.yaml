@@ -8,8 +8,8 @@ infra:
 input:
   - fcitx5
   - fcitx5-rime
-  - kanata # Karabiner-Elements
-  - fusuma
+  - kanata # Karabiner
+  - fusuma # BetterAndBetter
 
 fonts:
   - font-maple-mono-nl-nf-cn
