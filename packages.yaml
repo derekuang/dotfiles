@@ -1,9 +1,10 @@
+# Linux
 infra:
   - clash-verge-rev
   - git
   - homebrew
   - stow
-  - docker # podman
+  - docker
 
 input:
   - fcitx5
@@ -15,18 +16,18 @@ fonts:
   - font-maple-mono-nl-nf-cn
 
 terminal:
-  - ghostty # wezterm
-  - fish # zsh
-  - starship # zsh-power10k
-  - zellij # tmux
+  - ghostty
+  - fish
+  - starship
+  - zellij
   - yazi
   - tldr
   - kd
 
 editors:
-  - zed # vscode
-  - helix # neovim-lazyvim
-  - milkup # typora
+  - zed
+  - helix
+  - typora
 
 network:
   - google-chrome
@@ -47,7 +48,5 @@ containers:
 utilities:
   - readest
   - gearlever
-  # - mission-center
-  # - solaar # logitech-unifying
 
 gnome-extensions:
