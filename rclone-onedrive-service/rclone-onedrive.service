@@ -5,17 +5,17 @@ Wants=network-online.target
 
 [Service]
 Type=notify
-User=kyd
-Group=kyd
-ExecStart=/usr/bin/rclone mount onedrive: /home/kyd/onedrive \
+Environment=ONEDRIVE_MOUNT=%h/Onedrive
+Environment=RCLONE_FILTER=%h/.config/rclone/exclude.txt
+ExecStart=/usr/bin/rclone mount onedrive: ${ONEDRIVE_MOUNT} \
   --vfs-cache-mode full \
   --vfs-cache-max-size 5G \
   --vfs-cache-max-age 24h \
   --vfs-read-chunk-size 128M \
   --vfs-read-chunk-size-limit off \
-  --filter-from /home/kyd/.config/rclone/exclude.txt \
+  --filter-from ${RCLONE_FILTER} \
   --umask 022
-ExecStop=fusermount3 -u /home/kyd/onedrive
+ExecStop=fusermount3 -u ${ONEDRIVE_MOUNT}
 Restart=on-failure
 RestartSec=10
 
