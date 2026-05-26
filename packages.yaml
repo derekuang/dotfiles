@@ -40,7 +40,7 @@ messaging:
 office:
   - onlyoffice # wpsoffice
 
-services:
+containers:
   - immich
   - jellyfin
 
@@ -49,3 +49,5 @@ utilities:
   - gearlever
   # - mission-center
   # - solaar # logitech-unifying
+
+gnome-extensions:
