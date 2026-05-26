@@ -1,23 +1,32 @@
-[alias]
-    lg = log --graph --oneline --all --decorate
-    pf = push --force-with-lease
-[branch "main"]
-    mergeoptions = --no-ff
-[core]
-    autocrlf = input
-    protectNTFS = false
-[fetch]
-    prune = true
-[init]
-    defaultBranch = main
-[pull]
-    rebase = true
-[rebase]
-    autoStash = true
-[submodule]
-    recurse = true
 [user]
     name = derekuang
     email = kuangyaode@gmail.com
+
+[core]
+    autocrlf = input
+    protectNTFS = false
+
+[init]
+    defaultBranch = main
+
 [safe]
     directory = *
+
+[alias]
+    lg = log --graph --oneline --all --decorate
+    pf = push --force-with-lease
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = true
+
+[rebase]
+    autoStash = true
+
+[branch "main"]
+    mergeoptions = --no-ff
+
+[submodule]
+    recurse = true
