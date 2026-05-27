@@ -1,10 +1,11 @@
-# Linux
+# Linux Atomic
 
 infra:
   - clash-verge-rev
   - git
   - stow
   - docker
+  - homebrew
 
 input:
   - fcitx5
