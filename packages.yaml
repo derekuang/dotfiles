@@ -1,16 +1,16 @@
 # Linux
+
 infra:
   - clash-verge-rev
   - git
-  - homebrew
   - stow
   - docker
 
 input:
   - fcitx5
   - fcitx5-rime
-  - kanata # Karabiner
-  - fusuma # BetterAndBetter
+  - kanata
+  - fusuma
 
 fonts:
   - font-maple-mono-nl-nf-cn
@@ -33,14 +33,14 @@ editors:
 network:
   - google-chrome
   - tailscale
-  - rclone # onedrive
+  - rclone
 
 messaging:
   - wechat
   - telegram
 
 office:
-  - onlyoffice # wpsoffice
+  - wpsoffice
 
 containers:
   - immich
