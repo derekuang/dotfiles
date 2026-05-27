@@ -22,6 +22,7 @@
     "cv35": true, // alternative italic l
     "cv37": true // alternative italic y
   },
+  "buffer_font_fallbacks": ["Maple Mono NL NF CN"],
   /* Keymap */
   // Modal Editing
   "vim_mode": true,
@@ -94,13 +95,7 @@
   },
   /* Terminal */
   "terminal": {
-    "font_family": "Maple Mono NL NF CN",
-    "font_features": {
-      "cv01": true, // remove gaps
-      "cv34": true, // alternative italic k
-      "cv35": true, // alternative italic l
-      "cv37": true // alternative italic y
-    }
+    "font_family": "FiraCode Nerd Font",
   },
   /* Version Control */
   "git": {

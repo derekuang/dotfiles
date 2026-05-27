@@ -14,6 +14,7 @@ input:
 
 fonts:
   - font-maple-mono-nl-nf-cn
+  - font-fira-code-nerd-font
 
 terminal:
   - ghostty
