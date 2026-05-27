@@ -49,5 +49,6 @@ containers:
 utilities:
   - readest
   - gearlever
+  - solaar
 
 gnome-extensions:
