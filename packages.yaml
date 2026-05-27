@@ -1,16 +1,17 @@
-# Linux
+# MacOS
 
 infra:
   - clash-verge-rev
   - git
   - stow
   - docker
+  - homebrew
 
 input:
   - fcitx5
   - fcitx5-rime
-  - kanata
-  - fusuma
+  - Karabiner
+  - BetterAndBetter
 
 fonts:
   - font-maple-mono-nl-nf-cn
@@ -23,7 +24,6 @@ terminal:
   - zellij
   - yazi
   - tldr
-  - kd
 
 editors:
   - zed
@@ -33,7 +33,7 @@ editors:
 network:
   - google-chrome
   - tailscale
-  - rclone
+  - onedrive
 
 im:
   - wechat
@@ -42,22 +42,7 @@ im:
 office:
   - wpsoffice
 
-containers:
-  - immich
-  - jellyfin
-
 utilities:
   - bitwarden
   - readest
-  - gearlever
-  - flatseal
-  - qdiskinfo
-  - solaar
-
-gnome-extensions:
-  - Auto Move Windows # by fmuellner
-  - Blur my Shell # by aunetx
-  - Input Method Panel # by csslayer
-  - No overview at start-up # by fthx
-  - Search Light # by icedman
-  - Touchpad Gesture Customization # by Henry
+  - logi-options-plus
