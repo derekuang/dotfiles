@@ -48,3 +48,5 @@
 $ grep -E '^input:' /usr/lib/group | sudo tee -a /etc/group
 $ sudo usermod -aG input $USER
 ```
+
+5. WPS365不支持从软件内设置界面为中文，可以用flatseal添加环境变量`LANG=zh_CN.UTF-8`
