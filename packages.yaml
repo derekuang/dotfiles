@@ -35,7 +35,7 @@ network:
   - tailscale
   - rclone
 
-messaging:
+im:
   - wechat
   - telegram
 
@@ -49,6 +49,9 @@ containers:
 utilities:
   - readest
   - gearlever
+  - flatseal
+  - qdiskinfo
+  - keepassxc
   - solaar
 
 gnome-extensions:
