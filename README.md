@@ -33,9 +33,25 @@
 
 ## 注意事项
 
+- 每个分支代表不同的机器配置，但它们都应该始终`rebase`到`default`分支进行修改
+
+  ```bash
+  # default分支有提交，同步到当前分支
+  $ git switch <BRANCH>
+  $ git rebase <DEFAULT_BRANCH>
+  $ git push --force-with-lease
+  ```
+
+  ```bash
+  # 在其它机器上拉取同步分支
+  $ git switch <BRANCH>
+  $ git fetch
+  $ git reset --hard origin/<BRANCH>
+  ```
+
 - linux系统考虑设置selinux为`disabled`或`permissive`
 
-- 如果target目录不是`~`，需要用`-t`选项指定。如系统级的`.service`文件指定`-t ~/.config/systemd/user`
+- 如果target目录不是`~`，需要用`-t`选项指定。如系统级的`.service`文件指定`stow -t ~/.config/systemd/user`
 
 - 如果是给flatpak应用同步配置，要先开放`$HOME`目录权限
 
