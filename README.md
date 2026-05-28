@@ -6,22 +6,22 @@
 
 ## 常见情况处理（所有处理都是在`~/dotfiles`下）
 
-1. stow目录有文件，target目录无文件，创建symlink至target目录
+- stow目录有文件，target目录无文件，创建symlink至target目录
 
-`stow --no-folding $PACKAGE`
+  `stow --no-folding $PACKAGE`
 
-2. stow目录有文件，target目录有文件，覆盖target目录
+- stow目录有文件，target目录有文件，覆盖target目录
 
-`rm /path/to/target/file && stow $PACKAGE`
+  `rm /path/to/target/file && stow $PACKAGE`
 
-3. 不管stow目录有无文件，target目录有真实文件，覆盖stow目录
+- 不管stow目录有无文件，target目录有真实文件，覆盖stow目录
 
-`mkdir -p /dir/to/stow/file && touch $STOW_FILE # 如果还没有源stow文件，创建一个空白同名文件` 
-`stow --adopt $PACKAGE`
+  `mkdir -p /dir/to/stow/file && touch $STOW_FILE # 如果还没有源stow文件，创建一个空白同名文件` 
+  `stow --adopt $PACKAGE`
 
-4. 卸载软件后，移除target目录相关的symlink
+- 卸载软件后，移除target目录相关的symlink
 
-`stow -D $PACKAGE`
+  `stow -D $PACKAGE`
 
 ## 私密文件处理
 
@@ -33,20 +33,21 @@
 
 ## 注意事项
 
-0. linux系统考虑关闭selinux
+- linux系统考虑设置selinux为`disabled`或`permissive`
 
-1. 如果target目录不是`~`，需要用`-t`选项指定。如系统级的`.service`文件指定`-t ~/.config/systemd/user`
+- 如果target目录不是`~`，需要用`-t`选项指定。如系统级的`.service`文件指定`-t ~/.config/systemd/user`
 
-2. 如果是给flatpak应用同步配置，要先开放`$HOME`目录权限
+- 如果是给flatpak应用同步配置，要先开放`$HOME`目录权限
 
-`sudo flatpak override --system $APPID --filesystem=home`
+  `sudo flatpak override --system $APPID --filesystem=home`
 
-3. 有一些系统服务配置，如`kanata-service`，由于系统启动读取service文件是home目录还没挂载，所以symlink无法读取，要把文件直接复制到目标目录
+- 有一些系统服务配置，如`kanata-service`，由于系统启动读取service文件是home目录还没挂载，所以symlink无法读取，要把文件直接复制到目标目录
 
-4. fusuma需要把用户添加到`input`组，在atomic desktop中需要特殊处理：
-```bash
-$ grep -E '^input:' /usr/lib/group | sudo tee -a /etc/group
-$ sudo usermod -aG input $USER
-```
+- fusuma需要把用户添加到`input`组，在atomic desktop中需要特殊处理：
 
-5. WPS365不支持从软件内设置界面为中文，可以用flatseal添加环境变量`LANG=zh_CN.UTF-8`
+  ```bash
+  $ grep -E '^input:' /usr/lib/group | sudo tee -a /etc/group
+  $ sudo usermod -aG input $USER
+  ```
+
+- WPS365不支持从软件内设置界面为中文，可以用flatseal添加环境变量`LANG=zh_CN.UTF-8`
