@@ -47,19 +47,16 @@ containers:
   - jellyfin
 
 utilities:
+  - bitwarden
   - readest
   - gearlever
   - flatseal
   - qdiskinfo
-  - keepassxc
   - solaar
 
 gnome-extensions:
-  - AppIndicator and KStatusNotifierItem Support # by 3v1n0
   - Auto Move Windows # by fmuellner
   - Blur my Shell # by aunetx
-  - Clipboard Indicator # by Tudmotu
-  - Dash to Dock # by michele_g
   - Input Method Panel # by csslayer
   - No overview at start-up # by fthx
   - Search Light # by icedman
