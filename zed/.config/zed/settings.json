@@ -63,6 +63,8 @@
   "middle_click_paste": false,
   "colorize_brackets": true,
   /* Languages & Tools */
+  // LSP
+  "lsp_results_location": "picker",
   // Inline Diagnostics
   "diagnostics": {
     "inline": {
