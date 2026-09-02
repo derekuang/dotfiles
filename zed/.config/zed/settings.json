@@ -89,7 +89,8 @@
   /* Panels */
   // Git Panel
   "git_panel": {
-    "tree_view": true
+    "tree_view": true,
+    "entry_primary_click_action": "file_diff"
   },
   // Collaboration Panel
   "collaboration_panel": {
