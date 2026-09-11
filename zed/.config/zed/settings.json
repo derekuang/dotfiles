@@ -32,6 +32,8 @@
     "use_smartcase_find": true
   },
   /* Editor */
+  // Auto Save
+  "autosave": "on_focus_change",
   // Which-key Menu
   "which_key": {
     "enabled": true,
