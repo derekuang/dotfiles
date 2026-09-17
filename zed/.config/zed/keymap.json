@@ -35,26 +35,11 @@
     }
   },
   {
-    "context": "vim_mode == helix_normal",
-    "bindings": {
-      "escape": "editor::Cancel"
-    }
-  },
-  {
     "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
     "bindings": {
       "shift-l": "vim::WindowBottom",
-      "shift-h": "vim::WindowTop"
-    }
-  },
-  // Zellij compatibility
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
-      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
-      "ctrl-s": ["terminal::SendKeystroke", "ctrl-s"],
-      "ctrl-t": ["terminal::SendKeystroke", "ctrl-t"],
+      "shift-h": "vim::WindowTop",
+      "shift-x": "vim::ToggleVisualLine"
     }
   }
 ]
