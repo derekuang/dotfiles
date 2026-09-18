@@ -111,6 +111,9 @@
   /* AI */
   // Agent Configuration
   "agent": {
+    "sandbox_permissions": {
+      "allow_unsandboxed": true
+    },
     "single_file_review": true,
     "show_turn_stats": true,
     "default_profile": "write",
