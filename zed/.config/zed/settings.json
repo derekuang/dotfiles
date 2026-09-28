@@ -33,7 +33,12 @@
   },
   /* Editor */
   // Auto Save
-  "autosave": "on_focus_change",
+  // "autosave": "on_focus_change",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
   // Which-key Menu
   "which_key": {
     "enabled": true,
