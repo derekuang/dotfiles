@@ -64,6 +64,7 @@
   },
   // Wrapping
   "soft_wrap": "editor_width",
+  "soft_wrap_indent": "extra_one",
   // Formatting
   "format_on_save": "off",
   // Whitespace
