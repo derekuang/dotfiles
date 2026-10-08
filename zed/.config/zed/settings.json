@@ -9,6 +9,7 @@
 {
   /* General */
   // General Settings
+  "cli_default_open_behavior": "new_window",
   "confirm_quit": true,
   /* Appearance */
   // Theme
