@@ -7,8 +7,19 @@
 // from the command palette.
 [
   {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-p": "file_finder::Toggle",
+      "ctrl-w": [
+        "pane::CloseActiveItem",
+        {
+          "close_pinned": false
+        }
+      ]
+    }
+  },
+  {
     "bindings": {
-      "ctrl-w": null,
       "ctrl-shift-w": "pane::CloseActiveItem",
       "ctrl-b": "workspace::ToggleLeftDock",
     }
