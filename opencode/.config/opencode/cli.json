@@ -9,7 +9,7 @@
     "verbosity": "high"
   },
   "keybinds": {
-    "session.tab.next": "alt+j",
-    "session.tab.previous": "alt+k"
+    "session.tab.next": "alt+l",
+    "session.tab.previous": "alt+h"
   }
 }
