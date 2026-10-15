@@ -1,7 +1,12 @@
 (defcfg process-unmapped-keys yes )
 
-(defsrc caps esc)
+(defsrc caps esc home end lctl)
 
-(defalias caps (tap-hold 200 200 esc lctl) )
+(defalias
+  ctrl (multi lctrl (layer-while-held ctrl-layer) )
+  caps (tap-hold 200 200 esc @ctrl)
+)
 
-(deflayer default @caps grv)
+(deflayer default @caps grv home end @ctrl)
+
+(deflayer ctrl-layer _ _ (unmod (lctl) pgup) (unmod (lctl) pgdn) lctl )
