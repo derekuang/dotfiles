@@ -21,7 +21,7 @@
     "cv01": true, // remove gaps
     "cv34": true, // alternative italic k
     "cv35": true, // alternative italic l
-    "cv37": true // alternative italic y
+    "cv37": true, // alternative italic y
   },
   "buffer_font_fallbacks": ["Maple Mono NL NF CN"],
   /* Keymap */
@@ -30,20 +30,20 @@
   "helix_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
-    "use_smartcase_find": true
+    "use_smartcase_find": true,
   },
   /* Editor */
   // Auto Save
-  // "autosave": "on_focus_change",
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 1000
-    }
-  },
+  "autosave": "on_focus_change",
+  // "autosave": {
+  //   "after_delay": {
+  //     "milliseconds": 1000
+  //   }
+  // },
   // Which-key Menu
   "which_key": {
     "enabled": true,
-    "delay_ms": 200
+    "delay_ms": 200,
   },
   // Multibuffer
   "diff_view_style": "unified",
@@ -53,21 +53,21 @@
   "scroll_sensitivity": 3.0,
   // Edit Predictions
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   // Drag And Drop Selection
   "drag_and_drop_selection": {
-    "enabled": false
+    "enabled": false,
   },
   // Toolbar
   "toolbar": {
-    "quick_actions": false
+    "quick_actions": false,
   },
   // Wrapping
   "soft_wrap": "editor_width",
   "soft_wrap_indent": "extra_one",
   // Formatting
-  "format_on_save": "off",
+  "format_on_save": "on",
   // Whitespace
   "always_treat_brackets_as_autoclosed": true,
   // Miscellaneous
@@ -79,8 +79,8 @@
   // Inline Diagnostics
   "diagnostics": {
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   /* Search & Files */
   // Search
@@ -91,32 +91,32 @@
   // Status Bar
   "search": {
     "button": false,
-    "center_on_match": true
+    "center_on_match": true,
   },
   // TabBar
   "tab_bar": {
-    "show": false
+    "show": false,
   },
   /* Panels */
   // Git Panel
   "git_panel": {
     "group_by": "none",
     "tree_view": true,
-    "entry_primary_click_action": "file_diff"
+    "entry_primary_click_action": "file_diff",
   },
   // Collaboration Panel
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   /* Terminal */
   "terminal": {
     "font_family": "FiraCode Nerd Font",
-    "option_as_meta": true
+    "option_as_meta": true,
   },
   /* Version Control */
   "git": {
     "inline_blame": {
-      "enabled": false
-    }
-  }
+      "enabled": false,
+    },
+  },
 }
