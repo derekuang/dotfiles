@@ -6,6 +6,7 @@
   },
   "animations": true,
   "session": {
+    "thinking": "show",
     "verbosity": "high"
   },
   "keybinds": {
