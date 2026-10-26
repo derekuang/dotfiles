@@ -30,6 +30,11 @@ editors:
   - helix
   - typora
 
+ai:
+  - opencode
+  - dsh      # npm: @deepseek-ai/dsh
+  - dsh-tui  # npm: @deepseek-harness-tui/dsh-tui
+
 network:
   - google-chrome
   - tailscale
