@@ -14,44 +14,51 @@
       "ctrl-w": [
         "pane::CloseActiveItem",
         {
-          "close_pinned": false
-        }
-      ]
-    }
+          "close_pinned": false,
+        },
+      ],
+    },
   },
   {
     "bindings": {
       "ctrl-shift-w": "pane::CloseActiveItem",
       "ctrl-b": "workspace::ToggleLeftDock",
-    }
+    },
   },
   {
     "context": "VimControl && !menu || !Editor && !Terminal",
     "bindings": {
       "ctrl-w ctrl-h": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "left" }
+        { "direction": "left" },
       ],
       "ctrl-w ctrl-l": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "right" }
+        { "direction": "right" },
       ],
       "ctrl-w ctrl-k": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "up" }
+        { "direction": "up" },
       ],
       "ctrl-w ctrl-j": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "down" }
-      ]
-    }
+        { "direction": "down" },
+      ],
+    },
   },
   {
     "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
     "bindings": {
       "shift-l": "vim::WindowBottom",
       "shift-h": "vim::WindowTop",
-      "shift-x": "vim::ToggleVisualLine"
-    }
-  }
+      "shift-x": "vim::ToggleVisualLine",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-b": ["terminal::SendKeystroke", "ctrl-b"],
+      "ctrl-k": ["terminal::SendKeystroke", "ctrl-k"],
+    },
+  },
 ]
