@@ -1,0 +1,7 @@
+packages:
+  - .
+
+nodeLinker: hoisted
+autoInstallPeers: false
+minimumReleaseAgeExclude:
+  - dsh-better-sidebar@0.30.1
