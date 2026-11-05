@@ -1,0 +1,12 @@
+# Overlay applied only by dsh-web.service (via `dsh web --patch`).
+# A patch entry's `config` replaces the whole config object, so every field the
+# base layer sets must be restated here.
+# Keeps the browser-session cookie valid for ~10 years instead of the 30-day
+# default, so the one-time `?token=` exchange is effectively never needed again.
+# The signing secret lives in ~/.dsh/.credentials.yaml
+# (record client-connection/browser-session) and persists across restarts.
+- id: connection
+  name: '@deepseek-ai/dsh-client-connection'
+  config:
+    trustedHosts: !!js ctx.webStartup.trustedHosts
+    cookieMaxAgeDays: 3650

@@ -1,0 +1,19 @@
+[Unit]
+Description=DeepSeek Harness Web UI
+Documentation=https://github.com/deepseek-ai/deepseek-harness
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=%h
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin
+Environment=XDG_RUNTIME_DIR=/run/user/%U
+ExecStart=/home/linuxbrew/.linuxbrew/bin/dsh --profile web --patch /var/home/kyd/.config/dsh/web-service.yml --no-open --host 127.0.0.1 --port 3080
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target

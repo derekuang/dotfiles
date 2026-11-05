@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Print (and open) the launch URL of the *currently running* dsh-web.service.
+# The one-time ?token= exchange mints the long-lived browser cookie.
+# Usage: dsw [-p]    (-p: print only, do not open a browser)
+set -euo pipefail
+
+inv=$(systemctl --user show -p InvocationID --value dsh-web 2>/dev/null || true)
+if [ -z "${inv}" ]; then
+  echo "dsw: dsh-web.service is not running" >&2
+  exit 1
+fi
+
+url=$(journalctl --user -u dsh-web -b -o json 2>/dev/null \
+  | grep -F "$inv" \
+  | grep -oE 'http://[^"\\ ]*[?&]token=[A-Za-z0-9_-]+' \
+  | tail -1 || true)
+
+if [ -z "${url}" ]; then
+  echo "dsw: no launch URL found for invocation ${inv} (service still starting?)" >&2
+  exit 1
+fi
+
+printf '%s\n' "$url"
+if [ "${1:-}" != "-p" ] && [ -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]; then
+  xdg-open "$url" >/dev/null 2>&1 || true
+fi
