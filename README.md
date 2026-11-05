@@ -67,3 +67,17 @@
   ```
 
 - WPS365不支持从软件内设置界面为中文，可以用flatseal添加环境变量`LANG=zh_CN.UTF-8`
+
+## DSH Web 插件配置
+
+web profile 的 `package.json`、`pnpm-lock.yaml`、`pnpm-workspace.yaml`、`cordis.patch.yml`
+已由本仓库管理（stow 到 `~/.dsh/profiles/web/`）。新机器上按锁文件装回插件：
+
+```bash
+# 先装一次同版本 DSH 生成 profile 目录，然后再执行
+$ cd ~/.dsh/profiles/web && pnpm install --frozen-lockfile
+```
+
+- `cordis.patch.yml` 里 anysearch MCP 的 token 在运行时从 `~/.secrets/anysearch` 读取，不进仓库
+- `node_modules/`、`.plugin-manager/`、`cordis.yml`（内容为 `[]`，缺失会自动重建）不提交
+- 装完可用 `dsh --profile web --dump-config | grep -E 'better-sidebar|mcp-anysearch'` 验证
