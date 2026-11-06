@@ -1,0 +1,10 @@
+packages:
+  - .
+
+nodeLinker: hoisted
+autoInstallPeers: false
+minimumReleaseAgeExclude:
+  - dshmarket@1.73.12
+  - cc-safety-net@2.7.4
+  - dsh-context@0.82.1
+  - '@michengai/dsh-skills-manager@1.2.35'
