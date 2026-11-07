@@ -81,3 +81,19 @@ $ cd ~/.dsh/profiles/web && pnpm install --frozen-lockfile
 - `cordis.patch.yml` 里 anysearch MCP 的 token 在运行时从 `~/.secrets/anysearch` 读取，不进仓库
 - `node_modules/`、`.plugin-manager/`、`cordis.yml`（内容为 `[]`，缺失会自动重建）不提交
 - 装完可用 `dsh --profile web --dump-config | grep -E 'better-sidebar|mcp-anysearch'` 验证
+
+## DSH Desktop 插件配置
+
+desktop profile 的 `package.json`、`pnpm-lock.yaml`、`pnpm-workspace.yaml`、`cordis.patch.yml`
+已由本仓库管理（stow 到 `~/.dsh/profiles/desktop/`）。桌面版 profile 被 Electron 独占，
+`dsh --profile desktop` / `dsh plugin --profile desktop` 都会被拒绝，只能用 pnpm 直接装：
+
+```bash
+# 先装一次同版本 DSH Desktop 并让它生成 profile 目录，然后再执行
+$ rm ~/.dsh/profiles/desktop/{package.json,pnpm-lock.yaml,pnpm-workspace.yaml,cordis.patch.yml}
+$ cd ~/dotfiles && stow --no-folding dsh --ignore='^\.dsh/profiles/(web|dsh-tui)'
+$ cd ~/.dsh/profiles/desktop && pnpm install --frozen-lockfile
+```
+
+- `~/.dsh/.credentials.yaml` 与 `~/.secrets/anysearch` 不进仓库，新机器重新登录、重建 token 文件
+- 设置界面会原地写 `cordis.patch.yml`，调完 `git diff` 可见；`dsh plugin add` 后要复查 symlink 是否还在
