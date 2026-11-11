@@ -31,7 +31,7 @@ editors:
   - typora
 
 ai:
-  - opencode
+  - dsh
 
 network:
   - google-chrome
