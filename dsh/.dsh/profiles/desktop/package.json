@@ -6,13 +6,15 @@
       "bundles": [
         "@deepseek-ai/dsh-base",
         "@deepseek-ai/dsh-web-app",
+        "@deepseek-ai/dsh-experimental-tool-worktree",
         "@deepseek-ai/dsh-experimental-auto-review",
         "dshmarket",
         "cc-safety-net",
         "dsh-better-sidebar",
         "dsh-context",
         "@michengai/dsh-skills-manager",
-        "dsh-thoughtdag"
+        "dsh-thoughtdag",
+        "dsh-rewind-plugin"
       ]
     }
   },
@@ -20,8 +22,9 @@
     "@michengai/dsh-skills-manager": "1.2.35",
     "cc-safety-net": "2.7.4",
     "dsh-better-sidebar": "0.30.1",
-    "dsh-context": "0.82.1",
+    "dsh-context": "0.82.2",
+    "dsh-rewind-plugin": "0.21.2",
     "dsh-thoughtdag": "0.5.27",
-    "dshmarket": "1.73.12"
+    "dshmarket": "1.73.15"
   }
 }
