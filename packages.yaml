@@ -32,7 +32,6 @@ editors:
 
 ai:
   - opencode
-  - dsh # npm: @deepseek-ai/dsh
 
 network:
   - google-chrome
