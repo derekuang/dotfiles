@@ -93,7 +93,11 @@
     "button": false,
     "center_on_match": true,
   },
-  // TabBar
+  // Title Bar
+  "title_bar": {
+    "show_sign_in": false,
+  },
+  // Tab Bar
   "tab_bar": {
     "show": false,
   },
